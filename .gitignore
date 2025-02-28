@@ -1,0 +1,72 @@
+# .gitignore para aplicações ASP.NET Core
+
+# Compilação
+bin/
+obj/
+
+# Logs e arquivos temporários
+*.log
+logs/
+**/*.swp
+**/*.swo
+
+# Configurações do usuário e ambiente
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configurações locais
+.vscode/
+.idea/
+*.vsconfig
+
+# Configurações do Visual Studio
+.vs/
+
+# Configurações do Rider
+.idea/
+*.sln.iml
+
+# Dependências e pacotes
+packages/
+node_modules/
+
+# Arquivos gerados pelo NuGet
+project.lock.json
+project.assets.json
+
+# Arquivos do diretório publish
+publish/
+wwwroot/dist/
+
+# Certificados e chaves sensíveis
+*.pfx
+*.p12
+secrets.json
+appsettings.*.json
+!appsettings.json
+
+# Arquivos de cache
+*.pid
+*.tar.gz
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Arquivos gerados pelo Resharper
+_ReSharper.Caches/
+
+# Arquivos de banco de dados locais
+*.mdf
+*.ldf
+*.sqlite
+
+# Logs do npm e Yarn
+npm-debug.log
+yarn-error.log
+
+# Configurações específicas do sistema operacional
+.DS_Store
+Thumbs.db
