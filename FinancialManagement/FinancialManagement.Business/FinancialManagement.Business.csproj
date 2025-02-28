@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\Models\" />
+    <Folder Include="Models\IRepositories\" />
+    <Folder Include="Models\Validations\" />
+    <Folder Include="Models\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+
 </Project>
