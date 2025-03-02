@@ -1,4 +1,4 @@
-﻿using FinancialManagement.Business.Core;
+﻿using FinancialManagement.Business.Core.Models;
 using FinancialManagement.Business.Models.Enums;
 
 namespace FinancialManagement.Business.Models
@@ -11,5 +11,9 @@ namespace FinancialManagement.Business.Models
         public bool IsActive { get; set; }
         public Profile Profile { get; set; }
         public DateTime CreatedOn { get; set; }
+
+        public ICollection<BankAccount> BankAccounts { get; set; }
+        public ICollection<Transaction> Transactions { get; set; }
+        public ICollection<Budget> Budgets { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace FinancialManagement.Business.Core;
+﻿namespace FinancialManagement.Business.Core.Models;
 
 public abstract class Entity
 {

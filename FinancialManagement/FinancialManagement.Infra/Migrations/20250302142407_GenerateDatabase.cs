@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinancialManagement.Infra.Migrations
 {
     /// <inheritdoc />
-    public partial class GenerateDataBase : Migration
+    public partial class GenerateDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

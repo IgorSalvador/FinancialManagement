@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
-using FinancialManagement.Business.Core;
 using FinancialManagement.Business.Core.Data;
+using FinancialManagement.Business.Core.Models;
 using FinancialManagement.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 

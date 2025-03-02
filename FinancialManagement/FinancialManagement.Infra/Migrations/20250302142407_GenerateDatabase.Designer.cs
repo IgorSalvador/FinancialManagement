@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinancialManagement.Infra.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250228170603_GenerateDataBase")]
-    partial class GenerateDataBase
+    [Migration("20250302142407_GenerateDatabase")]
+    partial class GenerateDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

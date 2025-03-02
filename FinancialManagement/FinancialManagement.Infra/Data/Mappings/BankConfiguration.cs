@@ -9,29 +9,17 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FinancialManagement.Infra.Data.Mappings
 {
-    public class UserConfiguration : IEntityTypeConfiguration<User>    
+    public class BankConfiguration : IEntityTypeConfiguration<Bank>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Bank> builder)
         {
-            builder.ToTable("Users");
+            builder.ToTable("Banks");
 
-            builder.HasKey(p => p.Id);
+            builder.HasKey(x => x.Id);
 
             builder.Property(p => p.Name)
                 .IsRequired()
                 .HasColumnType("varchar(200)");
-
-            builder.Property(p => p.Email)
-                .IsRequired()
-                .HasColumnType("varchar(200)");
-
-            builder.Property(p => p.Password)
-                .IsRequired()
-                .HasColumnType("varchar(500)");
-
-            builder.Property(p => p.Profile)
-                .IsRequired()
-                .HasColumnType("int");
 
             builder.Property(p => p.IsActive)
                 .IsRequired()
