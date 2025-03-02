@@ -22,4 +22,9 @@
     <ProjectReference Include="..\FinancialManagement.Infra\FinancialManagement.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Models\ViewModels\" />
+  </ItemGroup>
+
 </Project>

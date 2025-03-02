@@ -1,6 +1,7 @@
 using System.Globalization;
 using FinancialManagement.Business.Core.Notifications;
 using FinancialManagement.Infra.Data.Context;
+using FinancialManagement.WebApp.Models;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+
+// Registrar IHttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddScoped<CookiesAccess>();
 
 builder.Services.AddScoped<INotificator, Notificator>();
 
