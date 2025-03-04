@@ -2,6 +2,7 @@ using System.Globalization;
 using FinancialManagement.Business.Core.Notifications;
 using FinancialManagement.Infra.Data.Context;
 using FinancialManagement.WebApp.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var cultureInfo = new CultureInfo(builder.Configuration["AppSettings:AppCulture"]!);
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = new PathString("/Login/Index"); // 401 - Unauthorized
+        options.AccessDeniedPath = new PathString("/Home/Error"); // 403 - Forbidden
+        options.LogoutPath = new PathString("/Login/Logout");
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Expire in 30 minutes
+        options.SlidingExpiration = true; // Renew time in all requests
+    });
+
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -47,10 +59,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();
