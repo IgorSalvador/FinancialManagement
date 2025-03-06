@@ -1,27 +1,38 @@
-﻿@{
+﻿@model FinancialManagement.WebApp.Models.GeneralModels.LoginModel
+@{
     ViewData["Title"] = "Login";
 }
 
 <div class="w-100 d-flex justify-content-center align-items-center" style="height: 100dvh">
     <div class="d-flex flex-column align-items-center w-50 p-4 border border-secondary border-opacity-25 rounded-4 shadow">
-        <div class="mb-3">
-            <h3 class ="text-center">Bem vindo ao Portal de Financeiro</h3>
+        <div class="w-100 mb-3">
+            <h3 class="text-center">Bem vindo ao Portal de Financeiro</h3>
         </div>
-        
-        <div class="mb-3">
 
+        <div class="w-100 mb-3">
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label"></label>
+                <input asp-for="Username" class="form-control" autocomplete="off">
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" autocomplete="off">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
         </div>
-        
+
         <div class="w-100 mb-2">
             <button type="submit" class="btn btn-primary w-100 mb-2">
                 <i class="bi bi-box-arrow-in-right"></i> Entrar
             </button>
-            
+
             <div class="text-center mb-2">
                 ----- ou entre com  -----
             </div>
 
-            
+
             <button type="button" class="btn btn-primary w-100">
                 <i class="bi bi-microsoft"></i> EntraId
             </button>

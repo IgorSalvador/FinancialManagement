@@ -7,16 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\IRepositories\**" />
-    <EmbeddedResource Remove="Models\IRepositories\**" />
-    <None Remove="Models\IRepositories\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Core\Validations\" />
-    <Folder Include="Models\IRepository\" />
     <Folder Include="Models\Validations\" />
-    <Folder Include="Models\Services\" />
   </ItemGroup>
 
   <ItemGroup>

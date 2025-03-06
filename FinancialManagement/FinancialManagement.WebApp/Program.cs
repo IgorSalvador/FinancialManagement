@@ -1,5 +1,8 @@
 using System.Globalization;
 using FinancialManagement.Business.Core.Notifications;
+using FinancialManagement.Business.Models.IRepositories;
+using FinancialManagement.Business.Models.Services;
+using FinancialManagement.Business.Models.Services.IServices;
 using FinancialManagement.Infra.Data.Context;
 using FinancialManagement.WebApp.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -35,6 +38,10 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<CookiesAccess>();
 
 builder.Services.AddScoped<INotificator, Notificator>();
+
+builder.Services.AddScoped<IUserRepository, IUserRepository>();
+
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
